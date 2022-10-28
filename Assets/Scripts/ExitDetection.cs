@@ -44,9 +44,9 @@ public class ExitDetection : MonoBehaviour
     {
         if (GUI.Button(new Rect(20, 20, 600, 200), "Click Here To Restart"))
         {
-            print("Not Yet Implented");
             exitCollision = false;
-            transform.position = new Vector3(0,1,0);
+            Application.LoadLevel("Level");
+            
         }
     }
 }

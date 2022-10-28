@@ -30,12 +30,18 @@ public class CarMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(FindClosestExit().transform.position);
+        GameObject exit = FindClosestExit();
+        agent.SetDestination(exit.transform.position);
+        if (agent.pathStatus == UnityEngine.AI.NavMeshPathStatus.PathPartial)
+        {
+            Destroy(exit);
+        }
+
     }
 }
